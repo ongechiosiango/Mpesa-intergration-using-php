@@ -1,4 +1,4 @@
-# M-Pesa API Integration with Native PHP 🚀
+# M-Pesa API Integration with Native PHP 
 
 A beginner-friendly, zero-dependency PHP implementation for integrating Safaricom's **Daraja 2.0 API**. This repository is specifically structured to help new developers understand the core mechanics of M-Pesa mechanics without the abstraction of complex frameworks or external packages.
 
@@ -35,21 +35,22 @@ cd Mpesa-intergration-using-php
 ### Step 2: Configure Keys & Settings
 Follow these visual portal steps to get your sandbox development keys:
 
-1. **Create an Account / Sign In:** Go to the [Safaricom Daraja Portal](https://safaricom.co.ke). If you are new, click sign up. Otherwise, log into your account dashboard.
+1. **Visit the Portal:** Open the [Safaricom Daraja Portal](https://safaricom.co.ke). This landing interface introduces you to the Safaricom APIs ecosystem.
+   ![Safaricom Developers Portal Landing Page](safaricomhome.png)
+
+2. **Create an Account / Sign In:** If you are new to the platform, click sign up. Otherwise, log into your personal account dashboard.
    ![Sign Up Process](signup.png)
    ![Portal Login](loginsaf.png)
 
-2. **Navigate the Home Dashboard:** Once authenticated, you will be redirected to the main developer portal homepage where you can manage your integration applications.
-   ![Daraja Home Dashboard](safaricomhome.png)
-
-3. **Create a New Testing Application:** Navigate to **My Apps** and click the create button to provision a new sandbox application. Ensure you check the relevant API permissions boxes required for your testing workflow.
+3. **Create a New Testing Application:** Navigate to **My Apps** and click the create button to provision a new sandbox application. Ensure you check the relevant API permission options required for your transaction flows.
    ![Creating a New App](create.png)
 
 4. **Complete Security Verification:** If prompted by the portal, complete the standard security verification checks to finalize your application creation.
    ![Security Verification](verification.png)
 
-5. **Copy Your Consumer Key & Secret:** Click on your newly created app under **My Apps** to reveal your unique credentials. Copy these keys into your local `config.php` file.
+5. **Copy Your Consumer Key & Secret:** Click on your newly created app under **My Apps** to reveal your unique app configurations. Copy these keys into your local `config.php` file.
    ![Locating App Details and Keys](details.png)
+   ![App Consumer Key and Consumer Secret Layout](image.png)
 
 > 💡 **Tip:** Default credentials for Safaricom's public sandbox Paybill (`174379`) and its corresponding Passkey are already pre-filled in your `config.php` file for immediate testing.
 
@@ -70,7 +71,7 @@ Safaricom servers cannot send real-time payment confirmations to your local comp
    `https://ngrok-free.app`
 5. Copy that URL string, append `/callback_url.php` to it, and use it as your **`CALLBACK_URL`** configuration value inside your `config.php` file:
    ```php
-   define('CALLBACK_URL', 'https://ngrok-free.app/callback_url.php');
+   define('CALLBACK_URL', 'https://ngrok-free.app');
    ```
 
 ---
@@ -91,8 +92,6 @@ Once your web server is running and Ngrok is activated, you can execute individu
     php stk_push.php
     ```
   * Keep an eye on your mobile device; an interactive overlay prompt requesting your sandbox PIN will appear shortly!
-  
-  ![STK Push Phone Prompt](image.png)
 
 ### Inspecting Incoming Webhook Payloads
 When a customer completes or cancels a transaction on their phone, Safaricom drops a JSON data stream into `callback_url.php`. 

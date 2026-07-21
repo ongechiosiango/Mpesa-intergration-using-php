@@ -23,7 +23,7 @@ A beginner-friendly, zero-dependency PHP implementation for integrating Safarico
 
 ---
 
-##  Setup & Installation Instructions
+## 🚀 Setup & Installation Instructions
 
 ### Step 1: Clone the Project
 Get these files onto your local development machine:
@@ -104,7 +104,28 @@ Our boilerplate code automatically dumps raw logs directly into a new project lo
 
 ---
 
+## ❓ Troubleshooting Common Beginner Errors
+
+If you run into issues during your local sandbox tests, use this decoder matrix to solve them:
+
+| Error Displayed / Behavior | Root Cause | Quick Solution |
+| :--- | :--- | :--- |
+| **"Invalid Access Token"** | Key formatting mismatch inside `config.php`. | Re-copy your consumer credentials from Daraja. |
+| **"Bad Request" (JSON parsing)** | The target phone number is formatted incorrectly. | Strip any `+` signs and prefix the number with `254...`. |
+| **No prompt appears on the handset** | Your Ngrok endpoint expired or tunnel disconnected. | Restart Ngrok and update your active `CALLBACK_URL`. |
+| **STK succeeds but `MpesaResponse.json` is empty** | Script crash before writing stream contents. | Inspect your local server's internal `error_log` file. |
+
+---
+
 ## 🛑 Production Warnings & Reminders
 * Always check the physical production dashboard definitions before deployment.
 * **Never commit active live production application keys** to a public GitHub repository. 
 * Remember to switch `MPESA_ENV` within `config.php` from `'sandbox'` over to `'production'` when migrating servers.
+
+---
+
+## 🗄️ Saving Payments To A Database
+Ready to move past local log files and save your validated customer transaction data into a MySQL table structured for production database schemas? 
+
+Head over to our modular companion repository setup guide:
+👉 **[M-Pesa Database Integration & Storage Hub](https://github.com)**

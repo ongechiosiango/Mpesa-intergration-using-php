@@ -1,4 +1,4 @@
-# M-Pesa API Integration with Native PHP 
+# M-Pesa API Integration with Native PHP
 
 A beginner-friendly, zero-dependency PHP implementation for integrating Safaricom's **Daraja 2.0 API**. This repository is specifically structured to help new developers understand the core mechanics of M-Pesa mechanics without the abstraction of complex frameworks or external packages.
 
@@ -23,7 +23,7 @@ A beginner-friendly, zero-dependency PHP implementation for integrating Safarico
 
 ---
 
-## 🚀 Setup & Installation Instructions
+##  Setup & Installation Instructions
 
 ### Step 1: Clone the Project
 Get these files onto your local development machine:
@@ -33,23 +33,27 @@ cd Mpesa-intergration-using-php
 ```
 
 ### Step 2: Configure Keys & Settings
-Follow these visual portal steps to get your sandbox development keys:
+Follow this exact order on the portal to get your sandbox development keys:
 
-1. **Visit the Portal:** Open the [Safaricom Daraja Portal](https://safaricom.co.ke). This landing interface introduces you to the Safaricom APIs ecosystem.
+1. **Visit the Portal Landing Page:** Open the [Safaricom Daraja Portal](https://safaricom.co.ke). This is the first page you encounter.
    ![Safaricom Developers Portal Landing Page](safaricomhome.png)
 
-2. **Create an Account / Sign In:** If you are new to the platform, click sign up. Otherwise, log into your personal account dashboard.
+2. **Create an Account:** If you are a new developer, click the sign up button to register your profile.
    ![Sign Up Process](signup.png)
+
+3. **Sign In to Your Dashboard:** Use your validated credentials to log into your account interface.
    ![Portal Login](loginsaf.png)
 
-3. **Create a New Testing Application:** Navigate to **My Apps** and click the create button to provision a new sandbox application. Ensure you check the relevant API permission options required for your transaction flows.
-   ![Creating a New App](create.png)
+4. **Review Account Details:** Check your developer dashboard profiles and settings.
+   ![Locating App Details and Keys](details.png)
 
-4. **Complete Security Verification:** If prompted by the portal, complete the standard security verification checks to finalize your application creation.
+5. **Complete Security Verification:** Complete any verification popups or authorization sequences required by the portal.
    ![Security Verification](verification.png)
 
-5. **Copy Your Consumer Key & Secret:** Click on your newly created app under **My Apps** to reveal your unique app configurations. Copy these keys into your local `config.php` file.
-   ![Locating App Details and Keys](details.png)
+6. **Create Your App:** Go to **My Apps**, click create, select your API permission options, and finalize the application setup.
+   ![Creating a New App](create.png)
+
+7. **Extract Your Production Keys:** Click your new app profile to reveal and copy your active sandbox parameters.
    ![App Consumer Key and Consumer Secret Layout](image.png)
 
 > 💡 **Tip:** Default credentials for Safaricom's public sandbox Paybill (`174379`) and its corresponding Passkey are already pre-filled in your `config.php` file for immediate testing.
